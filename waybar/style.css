@@ -1,0 +1,198 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono Nerd Font", "Symbols Nerd Font", "Noto Sans CJK SC", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+    margin-top: 1px;
+    margin-left: 2px;
+    margin-right: 4px;
+
+
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+    color: #cdd6f4;
+    border-bottom: 3px transparent;
+    border-radius: 4px;
+    margin: 5px 5px 0px 5px;
+}
+
+#workspaces {
+    background: #1e1e2e;
+    margin: 8px 0px;
+    padding: 0px 1px;
+    border-radius: 4px;
+    border: 2px solid #74aaec;
+    font-weight: bold;
+}
+
+#workspaces button {
+    padding: 0px 8px;
+    border-radius: 4px;
+    /* color: #cdd6f4; */
+    margin: 2px 0px;
+}
+
+#workspaces button.active {
+    color: #1e1e2e;
+    background: linear-gradient(45deg, #53b6ef, #41c3da);
+    border-radius: 4px;
+    min-width: 40px;
+    
+}
+
+#workspaces button:hover {
+    /* background: rgba(116, 199, 236, 0.3);
+    color: #cdd6f4; */
+    border-radius: 15px;
+}
+
+#custom-launcher {
+    color: #8359cd;
+    background: #7e8b80;
+    border-radius: 4px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    /* border: 2px solid #6cff76; */
+    font-size: 15px;
+}
+
+#custom-music {
+    background: linear-gradient(45deg, #cba6f7, #f5c2e7);
+    color: #1e1e2e;
+    border-radius: 4px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    font-weight: bold;
+    /* border: 2px solid #cba6f7; */
+}
+
+#window {
+    background: linear-gradient(45deg, #674b89, #303d91);
+    border-radius: 4px;
+    padding: 0px 15px;
+    margin: 12px 0px;
+    /* border: 2px solid #94e2d5; */
+    font-weight: bold;
+    
+}
+
+#cpu {
+    background: linear-gradient(45deg, #fab387, #f9e2af);
+    color: #1e1e2e;
+    border-radius: 4px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    /* border: 2px solid #fab387; */
+    font-weight: bold;
+}
+
+#memory {
+    background: linear-gradient(45deg, #a6e3a1, #94e2d5);
+    color: #1e1e2e;
+    border-radius: 4px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    /* border: 2px solid #a6e3a1; */
+    font-weight: bold;
+}
+
+#disk {
+    background: linear-gradient(45deg, #f5c2e7, #cba6f7);
+    color: #1e1e2e;
+    border-radius: 4px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    /* border: 2px solid #f5c2e7; */
+    font-weight: bold;
+}
+
+#battery {
+    background: linear-gradient(45deg, #94e2d5, #74c7ec);
+    color: #1e1e2e;
+    border-radius: 4px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    /* border: 2px solid #94e2d5; */
+    font-weight: bold;
+}
+
+#battery.warning {
+    background: linear-gradient(45deg, #f9e2af, #fab387);
+    color: #1e1e2e;
+}
+
+#battery.critical {
+    background: linear-gradient(45deg, #f38ba8, #eba0ac);
+    color: #1e1e2e;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.5; }
+}
+
+#network {
+    background: linear-gradient(45deg, #89dceb, #74c7ec);
+    color: #1e1e2e;
+    border-radius: 4px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    /* border: 2px solid #7294fb; */
+    font-weight: bold;
+}
+
+#network.disconnected {
+    background: linear-gradient(45deg, #f38ba8, #eba0ac);
+    color: #1e1e2e;
+}
+
+#pulseaudio {
+    background: linear-gradient(45deg, #fab387, #f9e2af);
+    color: #1e1e2e;
+    border-radius: 4px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    /* border: 2px solid #f97d76; */
+    font-weight: bold;
+}
+
+#pulseaudio.muted {
+    background: linear-gradient(45deg, #585b70, #6c7086);
+    color: #cdd6f4;
+}
+
+#clock {
+    background: linear-gradient(45deg, #cba6f7, #b4befe);
+    color: #1e1e2e;
+    border-radius: 4px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    /* border: 2px solid #cba6f7; */
+    font-weight: bold;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#tray {
+    background: #1e1e2e;
+    border-radius: 15px;
+    padding: 0px 15px;
+    margin: 8px 0px;
+    border: 2px solid #f5c2e7;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+tooltip {
+    background: rgba(21, 18, 27, 0.734);
+    border: 3px solid #e25fee;
+    border-radius: 4px;
+}
+
+tooltip label {
+    color: #cdd6f4;
+    padding: 5px;
+}

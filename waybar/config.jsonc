@@ -1,0 +1,154 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "spacing": 5,
+// "custom/launcher","niri/workspaces"
+    "modules-left": [ "tray","cpu","memory","disk","custom/music"],
+    "modules-center": ["niri/window"],
+    "modules-right": ["pulseaudio", "network",  "battery", "clock" ],
+
+    // 自定义启动器模块
+    "custom/launcher": {
+        "format": "λ",
+        "tooltip": false,
+        "on-click": "fuzzel"
+        //"on-click-right": "killall fuzzel || fuzzel -show run"
+    },
+    
+    // 自定义音乐模块
+    "custom/music": {
+        "exec": "playerctl metadata --format '🎵 {{artist}} - {{title}}' 2>/dev/null || echo '󰝛'",
+        "interval": 5,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "max-length": 40
+    },
+    
+    // 工作区模块
+    "niri/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "", 
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    
+    // 窗口标题
+    "niri/window": {
+        "format": "<b>&gt;= </b><b>{}</b><b> &lt;=</b>",
+        "max-length": 60
+        
+    },
+    
+    // 系统托盘
+    "tray": {
+        "spacing": 8,
+        "icon-size": 16
+    },
+    
+    // 时钟模块
+    "clock": {
+        "format": "{:%H:%M %Y-%m-%d}",
+        "format-alt": "{:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "on-click-right": "mode",
+            "format": {
+                "months":     "<span color='#ffeb3b'><b>{}</b></span>",
+                "days":       "<span color='#e6e9ef'><b>{}</b></span>",
+                "weeks":      "<span color='#9fe6a0'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc80'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    
+    // CPU 使用率
+    "cpu": {
+        "format": " {usage}%",
+        "format-alt": " {avg_frequency} GHz",
+        "tooltip": false,
+        "interval": 2
+    },
+    
+    // 内存使用率  
+    "memory": {
+        "format": " {}%",
+        "format-alt": " {used:0.1f}G/{total:0.1f}G",
+        "interval": 5
+    },
+    
+    // 磁盘使用率
+    "disk": {
+        "format": " {percentage_used}%",
+        "path": "/",
+        "interval": 30
+    },
+    
+    // 电池状态
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
+    },
+    
+    // 网络状态
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": " 离线",
+        "format-alt": " {ipaddr}",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "nm-connection-editor"
+    },
+    
+    // 音频控制
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " 静音",
+        "format-bluetooth": " {volume}%",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol"
+    }
+}
