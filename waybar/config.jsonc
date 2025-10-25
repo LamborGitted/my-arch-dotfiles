@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 40,
+    "height": 30,
     "spacing": 5,
 // "custom/launcher","niri/workspaces"
     "modules-left": [ "tray","cpu","memory","disk","custom/music"],
@@ -128,7 +128,7 @@
         "format-wifi": " {essid} ({signalStrength}%)",
         "format-ethernet": " {ifname}",
         "format-disconnected": " 离线",
-        "format-alt": " {ipaddr}",
+        "format-alt": "{ipaddr}",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
         "on-click-right": "nm-connection-editor"
     },
